@@ -1,0 +1,18 @@
+{
+  "id": 1101,
+  "category": {
+    "id": 1,
+    "name": "dog"
+  },
+  "name": "Jay",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "Animal vermifugado e com todas as vacinas"
+    }
+  ],
+  "status": "vendido"
+}
