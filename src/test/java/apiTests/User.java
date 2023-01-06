@@ -50,6 +50,7 @@ public class User {
                 .statusCode(200)
                 .body("username",is("Joao"))
                 .body("email", is("joao.jr@teste.com.br"))
+                .body("phone",is("55119923125"))
                 .body("id",is(userId))
 
         ;
@@ -68,7 +69,7 @@ public class User {
                 .log().all()
                 .statusCode(200)
                 .body("code", is(200))
-               .body("type", is("unknown"))
+                .body("type", is("unknown"))
         .extract()
                 .path("message")
        ;

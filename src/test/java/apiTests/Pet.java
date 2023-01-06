@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
 
 public class Pet {
-    String uri = "https://petstore.swagger.io/v2/user";
+    String uri = "https://petstore.swagger.io/v2/pet";
     int petId = 1101;
 
     public String lerJson(String caminhoJson) throws IOException {
@@ -19,7 +19,7 @@ public class Pet {
         return new String (Files.readAllBytes(Paths.get(caminhoJson)));
     }
 
-    @Test(priority = 0)
+    @Test (priority = 0)
     public void incluir() throws IOException {
        String jsonBody = lerJson("src/test/resources/data/pet.json");
 
@@ -40,7 +40,7 @@ public class Pet {
         ;
     }
 
-    @Test(priority = 1, dependsOnMethods = {"incluir"})
+    @Test (priority = 1, dependsOnMethods = {"incluir"})
     public void consultarPet(){
         given()
                 .contentType("application/json")
@@ -55,7 +55,7 @@ public class Pet {
         ;
     }
 
-    @Test(priority = 2,dependsOnMethods = {"consultarPet"})
+    @Test (priority = 2,dependsOnMethods = {"consultarPet"})
         public void alterarPet() throws IOException {
         String jsonBody = lerJson("src/test/resources/data/newpet.json");
 
